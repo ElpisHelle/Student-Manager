@@ -1,0 +1,33 @@
+h2 {
+	margin-top: 2em;
+}
+#inlineRadio1 {
+	background-color: red;
+}
+#inlineRadio2 {
+	background-color: orange;
+}
+#inlineRadio3 {
+	background-color: yellow;
+}
+#inlineRadio4 {
+	background-color: green;
+}
+#inlineRadio5 {
+	background-color: blue;
+}
+#inlineRadio6 {
+	background-color: indigo;
+}
+#inlineRadio7 {
+	background-color: violet;
+}
+#inlineRadio8 {
+	background-color: black;
+}
+.achievements span {
+	font-size: 1em;
+}
+.achievements li:hover {
+	background-color: rgb(235, 237, 240);
+}

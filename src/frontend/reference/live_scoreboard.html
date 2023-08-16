@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Live Scoreboard</title>
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/live_scoreboard.css" />
+		<!-- For MATERIAL ICONS (like refresh) -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<!-- BOOTSTRAP (as reference) -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<!-- Placeholder nav bar (doesn't link to anything) -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+			<div class="container-fluid">
+				<!-- PrairieLearn Header -->
+				<a class="navbar-brand" href="#">PrairieLearn</a>
+				<!-- Hamburger Menu -->
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- Actual navbar values -->
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#">{Course Name}</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Assessments</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Gradebook</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Live Scoreboard</a>
+						</li>
+						<!-- Leaderboards dropdown -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								Leaderboards
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Seasonal Scoreboard</a></li>
+								<li><a class="dropdown-item" href="#">All-Time Scoreboard</a></li>
+							</ul>
+						</li>
+						<!-- Profile dropdown -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								{Profile Name}
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Ranked Profile</a></li>
+								<li><a class="dropdown-item" href="#">Course Requests</a></li>
+								<li><a class="dropdown-item" href="#">Settings</a></li>
+								<li><a class="dropdown-item" href="#">News</a></li>
+								<li><a class="dropdown-item" href="#">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- ------------------------------------------------------ -->
+		<!-- Header -->
+		<h1 class="mx-4">
+			Live Scoreboard
+			<i class="material-icons" style="color: rgb(193, 37, 37)">radio_button_checked</i>
+		</h1>
+		<h2 class="mx-4 mb-4">{Name of current live quiz}</h2>
+		<!-- Whole container -->
+		<div class="table_and_refresh mx-4">
+			<!-- Button for manually refreshing (Google Icons) -->
+			<div class="manual_table_refresh my-3">
+				<button>
+					<i class="material-icons">refresh</i>
+				</button>
+			</div>
+			<!-- Actual table with data -->
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr class="bg-primary text-white">
+						<th>Rank</th>
+						<th>Display Name</th>
+						<th>Time</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>{Name 1}</td>
+						<td>2:45</td>
+						<td>3233</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>{Name 2}</td>
+						<td>2:49</td>
+						<td>3233</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>{Name 3}</td>
+						<td>2:33</td>
+						<td>3099</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>{Name 4}</td>
+						<td>3:20</td>
+						<td>2855</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>{Name 5}</td>
+						<td>3:48</td>
+						<td>2570</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- Bootstrap JS -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+			integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

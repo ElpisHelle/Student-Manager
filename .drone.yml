@@ -1,0 +1,18 @@
+kind: pipeline
+type: docker
+
+name: default
+
+steps:
+  - name: Install Dependencies
+    image: node:14
+    commands:
+      - cd src
+      - npm install
+
+  - name: Run Jest Tests
+    image: node:14
+    commands:
+      - cd src
+      - npm install jest
+      - npx jest

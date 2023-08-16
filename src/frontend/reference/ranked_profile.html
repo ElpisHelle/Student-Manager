@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Live Scoreboard</title>
+		<!-- For MATERIAL ICONS (like refresh) -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<!-- BOOTSTRAP (as reference) -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+			crossorigin="anonymous"
+		/>
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/ranked_profile.css" />
+	</head>
+	<body>
+		<!-- Placeholder nav bar (doesn't link to anything) -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+			<div class="container-fluid">
+				<!-- PrairieLearn Header -->
+				<a class="navbar-brand" href="#">PrairieLearn</a>
+				<!-- Hamburger Menu -->
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- Actual navbar values -->
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#">{Course Name}</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Assessments</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Gradebook</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Live Scoreboard</a>
+						</li>
+						<!-- Leaderboards dropdown -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								Leaderboards
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Seasonal Scoreboard</a></li>
+								<li><a class="dropdown-item" href="#">All-Time Scoreboard</a></li>
+							</ul>
+						</li>
+						<!-- Profile dropdown -->
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								{Profile Name}
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item active" aria-current="page" href="#"
+										>Ranked Profile</a
+									>
+								</li>
+								<li><a class="dropdown-item" href="#">Course Requests</a></li>
+								<li><a class="dropdown-item" href="#">Settings</a></li>
+								<li><a class="dropdown-item" href="#">News</a></li>
+								<li><a class="dropdown-item" href="#">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- ------------------------------------------------------ -->
+		<div class="container">
+			<h1>Ranked Profile</h1>
+			<!-- DISPLAY NAME & NAME COLOR -->
+			<h2>{Display Name (in its color)}</h2>
+			<!-- Form for changing display name -->
+			<div class="row">
+				<div class="col my-auto">
+					<form class="mb-4 my-auto">
+						<div class="form-floating">
+							<input
+								type="displayname"
+								id="displayname"
+								class="form-control form-control-lg"
+								placeholder="Place new display name here"
+								maxlength="100"
+								required
+							/>
+							<label for="displayname" class="form-label text-dark">Display Name</label>
+						</div>
+					</form>
+				</div>
+				<div class="col my-2">
+					<!-- Submit (save changes) button -->
+					<button class="btn btn-outline-dark px-4" type="submit">Save Changes</button>
+				</div>
+			</div>
+
+			<!-- Radio buttons for changing name color -->
+			<div class="color-picker">
+				<div class="form-check form-check-inline">
+					<input
+						class="form-check-input"
+						type="radio"
+						name="inlineRadioOptions"
+						id="inlineRadio1"
+						value="option1"
+						aria-label="..."
+					/>
+				</div>
+				<div class="form-check form-check-inline">
+					<input
+						class="form-check-input"
+						type="radio"
+						name="inlineRadioOptions"
+						id="inlineRadio2"
+						value="option2"
+						aria-label="..."
+					/>
+				</div>
+				<div class="form-check form-check-inline">
+					<input
+						class="form-check-input"
+						type="radio"
+						name="inlineRadioOptions"
+						id="inlineRadio3"
+						value="option3"
+						aria-label="..."
+					/>
+				</div>
+				<div class="form-check form-check-inline">
+					<input
+						class="form-check-input"
+						type="radio"
+						name="inlineRadioOptions"
+						id="inlineRadio4"
+						value="option4"
+						aria-label="..."
+					/>
+				</div>
+				<div class="form-check form-check-inline">
+					<input
+						class="form-check-input"
+						type="radio"
+						name="inlineRadioOptions"
+						id="inlineRadio5"
+						value="option5"
+						aria-label="..."
+					/>
+				</div>
+				<div class="form-check form-check-inline">
+					<input
+						class="form-check-input"
+						type="radio"
+						name="inlineRadioOptions"
+						id="inlineRadio6"
+						value="option6"
+						aria-label="..."
+					/>
+				</div>
+				<div class="form-check form-check-inline">
+					<input
+						class="form-check-input"
+						type="radio"
+						name="inlineRadioOptions"
+						id="inlineRadio7"
+						value="option7"
+						aria-label="..."
+					/>
+				</div>
+				<div class="form-check form-check-inline">
+					<input
+						class="form-check-input"
+						type="radio"
+						name="inlineRadioOptions"
+						id="inlineRadio8"
+						value="option8"
+						aria-label="..."
+					/>
+				</div>
+			</div>
+
+			<!-- ------------------------------------------------------ -->
+			<!-- COURSES -->
+			<h2>Courses</h2>
+			<h3><a href="#">{Course #1}</a></h3>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>16</td>
+						<td>18273</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- Achievements -->
+			<div class="container d-flex achievements">
+				<ul class="list-group list-group-horizontal mx-auto">
+					<li class="list-group-item"><span class="material-icons"> done_all </span></li>
+					<li class="list-group-item"><span class="material-icons"> trending_up </span></li>
+					<li class="list-group-item"><span class="material-icons"> stars </span></li>
+					<li class="list-group-item"><span class="material-icons"> explore </span></li>
+					<li class="list-group-item">
+						<span class="material-icons"> tips_and_updates </span>
+					</li>
+					<li class="list-group-item"><span class="material-icons"> rocket_launch </span></li>
+					<li class="list-group-item"><span class="material-icons"> anchor </span></li>
+					<li class="list-group-item">
+						<span class="material-icons"> hourglass_empty </span>
+					</li>
+				</ul>
+			</div>
+
+			<!-- ------------------------------------------------------ -->
+			<!-- RECENT RESULTS -->
+			<h2>Recent Results</h2>
+			<!-- Whole container -->
+			<div class="table_and_refresh">
+				<!-- Actual table with data -->
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr class="bg-primary text-white">
+							<th>Rank</th>
+							<th>Display Name</th>
+							<th>Time</th>
+							<th>Score</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td><a href="#">{Name 1}</a></td>
+							<td>2:45</td>
+							<td>3233</td>
+						</tr>
+						<tr class="table-primary">
+							<td>2</td>
+							<td><a href="#">{Name 2}</a></td>
+							<td>2:49</td>
+							<td>3233</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td><a href="#">{Name 3}</a></td>
+							<td>2:33</td>
+							<td>3099</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td><a href="#">{Name 4}</a></td>
+							<td>3:20</td>
+							<td>2855</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td><a href="#">{Name 5}</a></td>
+							<td>3:48</td>
+							<td>2570</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- ------------------------------------------------------ -->
+
+		<!-- Bootstrap JS -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+			integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

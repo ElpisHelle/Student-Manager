@@ -1,0 +1,71 @@
+services:
+  # These are the configurations for our Node app
+  # When Docker Compose starts this container it will automatically
+  # use the Dockerfile in the directory to configure it
+  app: 
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    depends_on:
+      # Our app does not work without our database
+      # so this ensures our database is loaded first
+      postgres:
+        condition: service_healthy
+    env_file: ./src/.env 
+    
+    ports:
+      - "3000:3000"
+    volumes:
+      # Maps our current project directory `.` to
+      # our working directory in the container
+      - ./src/:/app/
+
+    container_name: APPLICATION
+
+  # This is the configuration for our PostgreSQL database container
+  # Note the `postgres` name is important, in out Node app when we refer
+  # to  `host: "postgres"` that value is mapped on the network to the 
+  # address of this container.
+  postgres:
+    image: postgres:15.3-alpine
+    restart: always
+    environment:
+      # You can set the value of environment variables
+      # in your docker-compose.yml file
+      # Our Node app will use these to connect
+      # to the database
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=root
+    ports:
+      # Standard port for PostgreSQL databases
+      - "5432:5432"
+    volumes:
+      # When the PostgresSQL container is started it will run any scripts
+      # provided in the `docker-entrypoint-initdb.d` directory, this connects
+      # our seed file to that directory so that it gets run
+    - db-data:/var/lib/postgresql/data
+    - ./src/backend/gamification_database/dummy_db.sql:/docker-entrypoint-initdb.d/database-seed.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    container_name: DATABASE
+
+  redis:
+    image: redis:7.0.11-alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --save 20 1 --loglevel warning
+    volumes:
+      - redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+volumes:
+  db-data:
+  redis:
+     
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Assessment</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <script defer src="/js/bootstrap.min.js"></script>
+  <!-- Socket IO -->
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+  <div class="container d-flex align-items-center justify-content-center" style="height: 100vh">
+    <button id="getScoreBtn" class="btn btn-primary btn-lg">Get Score</button>
+  </div>
+  <script>
+    const socket = io();
+
+    // Function to generate random number between 1 and 100
+    function getRandomScore() {
+      let score = Math.floor(Math.random() * 100) + 1;
+      return score;
+    }
+    let session;
+
+    //   // Listen for the "connect" event emitted by the server
+    //   socket.on("connect", () => {
+    //     // Join the room
+    //     socket.emit("join", { userId: userId });
+    //   });
+    const userId = "<%= userId %>"; // Get the user ID from the server that we pass with the route handler
+    const studentId = "<%= studentId %>"; // Get the student ID from the server that we pass with the route handler
+
+    socket.emit("user connected", userId, studentId); // Send user ID to the server
+
+    let assessmentId = 1; // this is hardcoded for now, but you can get it from the server as well
+
+    // Attach click event handler to the button
+    let getScoreBtn = document.getElementById("getScoreBtn");
+    getScoreBtn.addEventListener("click", () => {
+      let score = getRandomScore();
+      socket.emit("score update", {
+        score: score,
+        assessmentId: assessmentId,
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "PrairieLearn application with added gamified functionality (built initially using ExpressJS)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "UBCO Capstone - PrairieLearn Gamification",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.0",
+    "connect-redis": "^7.1.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "i": "^0.3.7",
+    "ioredis": "^5.3.2",
+    "path": "^0.12.7",
+    "pg": "^8.11.0",
+    "prettier": "^2.8.8",
+    "socket.io": "^4.7.1",
+    "ws": "^8.13.0"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
